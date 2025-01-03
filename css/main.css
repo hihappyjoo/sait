@@ -59,6 +59,54 @@
     object-position: 50% 0; /* 이게 사진 위치 바꾸기잉 */
 }
 
+.visual-slider .btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    width: 70px;
+    height: 70px;
+    border: 1px solid #fff;
+    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 공간자체를 flex해서 안의 개체를 중앙정렬 */
+}
+
+.visual-slider .btn-prev {
+    left: 40px;
+}
+
+.visual-slider .btn-next {
+    right: 40px;
+}
+
+.swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    background: var(--white50p);
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--main-color);
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 15px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 20px;
+}
+
 .research {
     padding: 80px 0 66px;
     background: var(--bg-color);
