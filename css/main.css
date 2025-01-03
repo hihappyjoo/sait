@@ -1,0 +1,239 @@
+@charset "utf-8";
+
+#header {
+    background: #fff;
+}
+
+#header nav {
+    height: 104px; /* #header에게 주면 자손의 세로크기랑 안 맞아서 height를 아얘 속성들이 있는 nav에 부여 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* h가 고정되어있고 flex 명령어가 들어가서 button이 늘어나는데 aic로 줄임 */
+}
+
+.gnb {
+    display: flex;
+}
+
+.gnb li a {
+    display: block;
+    padding: 12px 20px;
+    /* 클릭띠 해야하니까 a를 블록으로 바꿔서 padding으로 자체 크기를 키우기 */
+
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--title-color);
+}
+
+.btn-search {
+    /* 버튼은 블록과 인라인의 속성을 동시에 가짐, 안에 있는 놈들은 이미지든 텍스트든 가로세로 중앙정렬을 함 */
+    width: 54px;
+    height: 54px;
+    background: #fff;
+    border: 1px solid var(--line-color);
+
+    /* 이미지는 인라인요소라 텍스트처럼 취급되어서 줄간격이 들어가는데 줄간격이 아래로만 들어간다고? 그래서 이렇게 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visual {
+    height: 595px;
+    background: skyblue;
+}
+
+.visual-slider {
+    height: 100%;
+}
+
+.visual-slider .swiper-slide figure {
+    width: 100%;
+    height: 100%;
+}
+
+.visual-slider .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 0; /* 이게 사진 위치 바꾸기잉 */
+}
+
+.research {
+    padding: 80px 0 66px;
+    background: var(--bg-color);
+}
+
+.research-list {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.research-list li {
+    width: 380px;
+    height: 200px;
+    padding: 36px 38px;
+
+    background: #fff;
+}
+
+.research-list li a {
+    display: flex; /* flex의 아이템들은 block화 된 것으로 취급됨 */
+    gap: 20px;
+}
+
+.research-list li a::before {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 60px;
+    background: no-repeat 50%;
+
+    flex-shrink: 0; /* flex에서 공간 점유율이 줄어들 때 줄지 못하게 하는 명령. 공간이 아닌 item에게 self로 주는 명령 */
+}
+
+.research-list li:nth-child(1) a::before {
+    background-image: url(../images/research-icon01.png);
+}
+.research-list li:nth-child(2) a::before {
+    background-image: url(../images/research-icon02.png);
+}
+.research-list li:nth-child(3) a::before {
+    background-image: url(../images/research-icon03.png);
+}
+.research-list li:nth-child(4) a::before {
+    background-image: url(../images/research-icon04.png);
+}
+.research-list li:nth-child(5) a::before {
+    background-image: url(../images/research-icon05.png);
+}
+.research-list li:nth-child(6) a::before {
+    background-image: url(../images/research-icon06.png);
+}
+.research-list li:nth-child(7) a::before {
+    background-image: url(../images/research-icon07.png);
+}
+.research-list li:nth-child(8) a::before {
+    background-image: url(../images/research-icon08.png);
+}
+.research-list li:nth-child(9) a::before {
+    background-image: url(../images/research-icon09.png);
+}
+
+.research-list li dl dt {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--title-color);
+}
+
+.research-list li dl dd {
+    font-size: 14px;
+    margin-top: 18px;
+}
+
+.join {
+    min-height: 690px;
+    padding: 80px 0;
+    background: url(https://file2.nocutnews.co.kr/newsroom/image/2023/01/19/202301191051044684_0.jpg) no-repeat 50% 0 /
+        cover;
+    /* object fit:cover처럼 꽉채우긔. /넣어줘야함 */
+    /* background-attachment: fixed; 스크롤에따라 이미지 따라다니는거 fixed는 뷰포트 기준 */
+}
+
+.join * {
+    color: #fff;
+}
+
+.join-con {
+    margin-top: 120px;
+}
+
+.join h3 {
+    font-weight: 700;
+    font-size: 44px;
+}
+
+.join p {
+    font-size: 20px;
+    margin-top: 30px;
+    width: 620px;
+}
+
+.join a {
+    font-weight: 700;
+    font-size: 18px;
+
+    display: block;
+    margin-top: 35px;
+
+    display: flex;
+    gap: 3px;
+}
+
+.join a::after {
+    content: "";
+    display: block;
+    width: 27px; /* 이거 옆에 글씨 크기랑 똑같이 맞추면 알아서 중앙정렬띠해서 걍 글케 보임 */
+    height: 27px;
+    background: url(../images/ico-more.png) no-repeat 50%;
+    margin-top: 2px;
+}
+
+#footer {
+    background: #1f1f1f;
+    padding: 77px 0;
+}
+
+#footer * {
+    color: #7e7e7e;
+}
+
+.foot-link ul {
+    display: flex;
+    margin-left: -16px; /* 이거 왜 반대방향으로 밀어야하지... 아무튼 반대 */
+}
+
+.foot-link ul li {
+    /* border: 1px solid red; */
+    position: relative; /* 포지션의 기준 */
+}
+
+.foot-link ul li::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 10px;
+    background: var(--white30p);
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.foot-link ul li:last-child::after {
+    display: none;
+}
+
+.foot-link ul li a {
+    display: block;
+    padding: 5px 16px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.foot-con {
+    border-top: 1px solid var(--white30p);
+    margin-top: 30px;
+    padding-top: 30px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright p + p {
+    font-weight: 700;
+    margin-top: 6px;
+}
