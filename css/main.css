@@ -125,6 +125,65 @@
     padding: 36px 38px;
 
     background: #fff;
+    position: relative;
+}
+
+.research-list li::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: red;
+    transition: 0.4s;
+}
+
+.research-list li::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 4px;
+    background: orange;
+    transition: 0.4s;
+}
+
+.research-list li dl::before {
+    content: "";
+    display: block;
+    position: absolute; /* posr이 li에게 있기 때문에 요소에 상관없이 posr이 있는 요소에 종속 */
+    bottom: 0;
+    left: 0;
+    width: 4px;
+    height: 0%;
+    background: yellow;
+    transition: 0.4s;
+}
+
+.research-list li dl::after {
+    content: "";
+    display: block;
+    position: absolute; /* posr이 li에게 있기 때문에 요소에 상관없이 posr이 있는 요소에 종속 */
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 0%;
+    background: yellowgreen;
+    transition: 0.4s;
+}
+
+.research-list li:hover::before,
+.research-list li:hover::after {
+    width: 100%;
+}
+
+.research-list li:hover dl::before,
+.research-list li:hover dl::after {
+    height: 100%;
 }
 
 .research-list li a {
