@@ -17,12 +17,50 @@
 
 .gnb li a {
     display: block;
-    padding: 12px 20px;
+    padding: 0 20px;
     /* 클릭띠 해야하니까 a를 블록으로 바꿔서 padding으로 자체 크기를 키우기 */
 
     font-weight: 700;
     font-size: 18px;
     color: var(--title-color);
+}
+
+.gnb li a i {
+    display: block;
+    padding: 12px 0;
+
+    position: relative;
+}
+
+.gnb li a i::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+
+    /* 가로 기준 중앙 정렬 */
+    /* left: 50%;
+    transform: translateX(-50%); */
+    /* 가로 기준 중앙 정렬 */
+
+    left: auto;
+    right: 0;
+
+    width: 0%;
+    height: 4px;
+    background: var(--main-color);
+    transition: 0.4s;
+}
+
+.gnb li a:hover {
+    color: var(--main-color);
+}
+
+.gnb li:hover a i::after {
+    width: 100%;
+    border-radius: 15px;
+    left: 0;
+    right: auto;
 }
 
 .btn-search {
